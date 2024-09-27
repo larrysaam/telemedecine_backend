@@ -5,7 +5,7 @@ const { Server } = require('socket.io')
 var onlineUsers = []
 
 //port number
-const port = 7000
+const port = 5000
 const server = http.createServer(app)
 
 //socket.io connection
