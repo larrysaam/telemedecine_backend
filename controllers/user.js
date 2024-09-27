@@ -110,8 +110,9 @@ exports.EditUser = (req, res)=>{
         {_id}, 
         {$push : {username, tile, location, phone, speciality, description, review}}
     ).exec()
-    .then(result=>{
+    .then(data=>{
         res.status(200).json({
+            data, 
             message: 'edite done'
         })
     })
