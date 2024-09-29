@@ -44,7 +44,7 @@ app.post(
             const email = attributes.email_addresses[0].email_address;
             const firstName = attributes.first_name;
             const lastName = attributes.last_name;
-		        const phone = attributes.phone_numbers[0]
+		      
     	
 			const user = new User({
 				_id: new mongoose.Types.ObjectId(),
@@ -52,7 +52,7 @@ app.post(
         tile: '', 
         location: '',
         email,
-        phone, 
+        phone: '', 
         speciality: '', 
         description: '',
         review: []

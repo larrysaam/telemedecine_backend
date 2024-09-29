@@ -97,7 +97,6 @@ exports.getUser=(req, res)=>{
 exports.EditUser = (req, res)=>{
     const _id = req.params.id
     const {
-        username, 
         tile, 
         location,
         phone, 
@@ -108,12 +107,12 @@ exports.EditUser = (req, res)=>{
 
     User.findByIdAndUpdate(
         {_id}, 
-        {$push : {username, tile, location, phone, speciality, description, review}}
+        {$push : {tile, location, phone, speciality, description, review}}
     ).exec()
     .then(data=>{
         res.status(200).json({
-            data, 
-            message: 'edite done'
+            data:data, 
+            message: 'edit done'
         })
     })
     .catch(err=>{
