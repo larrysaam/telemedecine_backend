@@ -32,9 +32,12 @@ const userSchema = mongoose.Schema({
         type: String,
         require: true,
     },
-    review: {
-        type: Array
-    }
+    review: [
+        {
+            username: String,
+            comment: String
+        }
+    ]
 })
 
 module.exports = mongoose.model('User', userSchema)
