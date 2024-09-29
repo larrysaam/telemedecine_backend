@@ -107,7 +107,7 @@ exports.EditUser = (req, res)=>{
 
     User.findByIdAndUpdate(
         {_id}, 
-        {$push : {tile, location, phone, speciality, description, review}}
+        {tile, location, phone, speciality, description, review}
     ).exec()
     .then(data=>{
         res.status(200).json({
