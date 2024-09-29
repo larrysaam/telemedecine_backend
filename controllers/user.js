@@ -104,6 +104,8 @@ exports.EditUser = (req, res)=>{
         description
     } = req.body
 
+    console.log(req.body)
+
     User.findByIdAndUpdate(
         {_id}, 
         {title, location, phone, speciality, description}
