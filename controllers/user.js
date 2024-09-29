@@ -97,17 +97,16 @@ exports.getUser=(req, res)=>{
 exports.EditUser = (req, res)=>{
     const _id = req.params.id
     const {
-        tile, 
+        title, 
         location,
         phone, 
         speciality, 
-        description,
-        review
+        description
     } = req.body
 
     User.findByIdAndUpdate(
         {_id}, 
-        {tile, location, phone, speciality, description, review}
+        {title, location, phone, speciality, description}
     ).exec()
     .then(data=>{
         res.status(200).json({

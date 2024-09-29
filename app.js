@@ -49,7 +49,7 @@ app.post(
 			const user = new User({
 				_id: new mongoose.Types.ObjectId(),
         username: `${firstName} ${lastName}`, 
-        tile: '', 
+        title: '', 
         location: '',
         email,
         phone: '', 
