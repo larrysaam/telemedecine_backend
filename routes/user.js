@@ -11,7 +11,7 @@ router.post('/signup', UserController.Signup)
 router.get('/:email', UserController.getUser)
 
 // edit user profile
-router.put('/:id', UserController.EditUser)
+router.patch('/:id', UserController.EditUser)
 
 //get all doctors
 router.get('/all', UserController.getAllDoctors )
