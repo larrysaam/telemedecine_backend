@@ -26,3 +26,31 @@ exports.CreateSpeciality = (req, res)=>{
         })
     })
 }
+
+
+
+//get all specialities
+exports.getAllSpeciality=(req, res)=>{
+    
+    Speciality.find()
+    .exec()
+    .then(specia=>{
+        if(specia.length <= 0){
+            res.status(200).json({
+                message: 'saved',
+                data: []
+            })
+        }else{
+            res.status(200).json({
+                message: 'saved',
+                data: specia
+            })
+        }
+        
+    })
+    .catch(err=>{
+        res.status(500).json({
+            message: err
+        })
+    })
+}
