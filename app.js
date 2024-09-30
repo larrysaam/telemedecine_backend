@@ -75,6 +75,8 @@ app.post(
     }
   );
 
+//avoid cors errors
+app.use(cors())
 
 //middlewares
 app.use(bodyParser.urlencoded({extended : true}))
@@ -82,8 +84,7 @@ app.use(bodyParser.json())
 app.use('/uploads', express.static('uploads'))
 
 
-//avoid cors errors
-app.use(cors())
+
 
 
 // routes
