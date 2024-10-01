@@ -14,7 +14,7 @@ router.get('/:email', UserController.getUser)
 router.patch('/:id', UserController.EditUser)
 
 //get all doctors
-router.get('/all', UserController.getAllDoctors )
+router.get('/doctors/all', UserController.getAllDoctors )
 
 // get all doctors account per speciality
 router.get('/specials/:speciality', UserController.AllAcounts )

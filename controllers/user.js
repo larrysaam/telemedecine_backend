@@ -64,7 +64,7 @@ exports.Signup = (req, res)=>{
 // get a user by email
 exports.getUser=(req, res)=>{
     const email = req.params.email
-    console.log(email)
+    console.log("email: ",email)
 
     User.find({email})
     .exec()
@@ -77,6 +77,7 @@ exports.getUser=(req, res)=>{
         }else{
             res.status(200).json({
                 data: [],
+                email: email,
                 message: 'empty'
             })
         }
@@ -158,6 +159,8 @@ exports.getAllDoctors=(req, res)=>{
     User.find({title: "doctor"})
     .exec()
     .then((accounts)=>{
+        console.log("accounts: ",accounts)
+
         res.status(200).json({
             data: accounts,
             message: 'edite done'
