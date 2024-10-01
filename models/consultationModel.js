@@ -6,9 +6,17 @@ const consultationSchema = mongoose.Schema({
         type: String,
         require: true,
     },
+    userName: {
+        type: String,
+        require: true,
+    },
     doctorId: {
         type: String,
         require: true,
+    },
+    doctorName: {
+        type: String,
+        require: true, 
     },
     status: {
         type: String,

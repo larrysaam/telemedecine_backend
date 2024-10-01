@@ -7,7 +7,9 @@ const Consultation = require('../models/consultationModel')
 exports.CreateReserve =(req, res)=>{
     const {
             userId,
+            userName,
             doctorId,
+            doctorName,
             status,
             scheduledDate,
             schedule
