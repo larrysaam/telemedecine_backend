@@ -10,22 +10,36 @@ exports.createChat=(req, res)=>{
         _id: new mongoose.Types.ObjectId(),
         userId,
         doctorId,
-        chat: ''
+        chat: []
     })
 
     //save chat to Mongodb collection
-    chatbox.save()
+    chatbox.find({ userId, doctorId })
+    .exec()
     .then(result=>{
-        res.status(200).json({
-            message: 'saved',
-            data: chatbox
-        })
+        if(result.length > 0){
+            res.status(200).json({
+                message: 'chat already exists',
+                data: result
+            })
+        }else{
+
+            //create new chat and save
+            chatbox.save()
+            .then(result=>{
+                res.status(200).json({
+                    message: 'saved',
+                    data: chatbox
+                })
+            })
+            .catch(err=>{
+                res.status(500).json({
+                    message: err
+                })
+            })
+        }
     })
-    .catch(err=>{
-        res.status(500).json({
-            message: err
-        })
-    })
+    
 }
 
 
