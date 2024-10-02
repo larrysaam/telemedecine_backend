@@ -13,6 +13,8 @@ exports.createChat=(req, res)=>{
         chat: []
     })
 
+    console.log('chat ',{ userId, doctorId })
+
     //save chat to Mongodb collection
     chatbox.find({ userId, doctorId })
     .exec()
