@@ -19,7 +19,9 @@ exports.CreateReserve =(req, res)=>{
     const consult = new Consultation({
         _id: new mongoose.Types.ObjectId(),
         userId,
+        userName,
         doctorId,
+        doctorName,
         status,
         scheduledDate,
         schedule
