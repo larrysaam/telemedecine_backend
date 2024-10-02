@@ -75,7 +75,7 @@ exports.SendMessage =(req, res)=>{
 exports.getMessage=(req, res)=>{
     const id = req.params.id
     const doctorId = id.split('_')[0]
-    const userId = id.split('_')[0]
+    const userId = id.split('_')[1]
 
 
     Chat.find({doctorId, userId})
