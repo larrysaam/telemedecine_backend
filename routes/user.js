@@ -10,6 +10,9 @@ router.post('/signup', UserController.Signup)
 //get a particular user by email
 router.get('/:email', UserController.getUser)
 
+//get user by id
+router.get('/v2/:id', UserController.getUserById)
+
 // edit user profile
 router.patch('/:id', UserController.EditUser)
 

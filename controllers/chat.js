@@ -90,6 +90,7 @@ exports.SendMessage =(req, res)=>{
 //[1] = userid
 exports.getMessage=(req, res)=>{
     const id = req.params.id
+    console.log("chat ids __ ", id)
     const doctorId = id.split('_')[0]
     const userId = id.split('_')[1]
 

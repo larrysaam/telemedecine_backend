@@ -61,6 +61,37 @@ exports.Signup = (req, res)=>{
 
 
 
+//get user by id
+exports.getUserById=(req, res)=>{
+    const _id = req.params.id
+
+    User.find({_id})
+    .exec()
+    .then(user=>{
+        if(user.length > 0){
+            res.status(200).json({
+                data: user,
+                message: 'done'
+            })
+        }else{
+            res.status(200).json({
+                data: [],
+                message: 'empty'
+            })
+        }
+        
+    })
+    .catch(err=>{
+        res.status(500).json({
+            error:{
+                message: err
+            }
+        })
+    })
+}
+
+
+
 // get a user by email
 exports.getUser=(req, res)=>{
     const email = req.params.email
