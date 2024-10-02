@@ -16,7 +16,7 @@ exports.createChat=(req, res)=>{
     console.log('chat ',{ userId, doctorId })
 
     //save chat to Mongodb collection
-    chatbox.find({ userId, doctorId })
+    Chat.find({ userId, doctorId })
     .exec()
     .then(result=>{
         if(result.length > 0){
