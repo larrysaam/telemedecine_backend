@@ -1,6 +1,7 @@
 const http = require('http')
 const app = require('./app')
 const { Server } = require('socket.io')
+const cors = require('cors')
 
 
 //port number
@@ -19,7 +20,7 @@ const io = new Server(server, {
 })
 
 io.on("connection", (socket)=>{
-    console.log("new user connected with socketId: ",socket.id)
+    console.log(`new user connected with socketId: ${socket.id}`)
 
     // listern to a custom connection
     socket.on("addNewUser", (userId)=>{
@@ -45,6 +46,8 @@ io.on("connection", (socket)=>{
 
     //remove user from online users when offline
     socket.on("disconnect", ()=>{
+        console.log("disconnected")
+        console.log("users online : -> ", onlineUsers)
         onlineUsers = onlineUsers.filter(user => user.socketId !== socket.id)
     })
 })

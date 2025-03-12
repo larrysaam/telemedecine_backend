@@ -72,11 +72,13 @@ exports.SendMessage =(req, res)=>{
         }}
     ).exec()
     .then(result=>{
+        console.log('sent')
         res.status(200).json({
             message: 'sent'
         })
     })
     .catch(err=>{
+        console.log(err)
         res.status(500).json({
             message: err
         })
